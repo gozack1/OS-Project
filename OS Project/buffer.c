@@ -12,9 +12,4 @@ Producer-Consumer Problem
 
 #include <buffer.h>
 
-sem_t full;
-sem_t empty;
-
-pthread_mutex_t mutex;
-
 BUFFER_item buffer[BUFFER_SIZE];
