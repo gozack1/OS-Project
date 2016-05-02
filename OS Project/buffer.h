@@ -11,5 +11,5 @@ Producer-Consumer Problem
 #include <pthread.h>
 
 
-tydef int buffer_item;
+typedef int buffer_item;
 #define BUFFER_SIZE 5
