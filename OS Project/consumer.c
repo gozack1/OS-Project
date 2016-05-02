@@ -1,3 +1,10 @@
+/*
+OS Project
+Mikal Callahan and Zachary Go
+Producer-Consumer Problem
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
