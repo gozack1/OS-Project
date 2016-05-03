@@ -28,7 +28,7 @@ int delete_item()
   
   while (count == 0)
   {
-    pr//do nothing
+    //do nothing
   }
   item = buffer [delete];
   printf("Consumed  %d ", buffe[delete])
