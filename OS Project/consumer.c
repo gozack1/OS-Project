@@ -26,15 +26,15 @@ void *consumer(void *param)
 
   while (1)
   {
-      int sleep (rand () %5 + 1);
+      sleep (rand () %10 + 1);
 
       sem_wait(&full);
       pthread_mutex_lock(&mutex);
 
-      (delete_item(item) < 0);
+      (delete_item(&item) < 0);
 
       pthread_mutex_unlock(&mutex);
-      sem_post (&empty);
+      sem_post(&empty);
 
   }
 
