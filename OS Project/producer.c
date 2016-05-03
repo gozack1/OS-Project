@@ -4,6 +4,7 @@ Mikal Callahan and Zachary Go
 Producer-Consumer Problem
 Producer.c
 */
+
 #include <stdlib.h>
 #include <pthread.h>
 #include <semaphore.h>
