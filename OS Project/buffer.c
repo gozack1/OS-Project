@@ -10,6 +10,6 @@ Producer-Consumer Problem
 #include <semaphore.h>
 #include <pthread.h>
 
-#include <buffer.h>
+#include "buffer.h"
 
-BUFFER_item buffer[BUFFER_SIZE];
+buffer_item buffer[BUFFER_SIZE];
