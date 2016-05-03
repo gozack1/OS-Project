@@ -12,7 +12,7 @@ consumer.c
 #include <unistd.h>
 #include <sys/types.h>
 
-#include <buffer.h>
+#include "buffer.h"
 
 sem_t full, empty;
 
