@@ -13,6 +13,10 @@ consumer.c
 #include <sys/types.h>
 
 #include "buffer.h"
+//<<<<<<< Updated upstream:OS Project/consumer.c
+//=======
+
+//>>>>>>> Stashed changes:consumer.c
 
 sem_t full, empty;
 
@@ -22,6 +26,7 @@ int delete_item(buffer_item *item);
 
 void *consumer(void *param)
 {
+//<<<<<<< Updated upstream:OS Project/consumer.c
   buffer_item item;
 
   while (1)
@@ -38,4 +43,9 @@ void *consumer(void *param)
 
   }
 
+=======
+
+
+return 0;
+//>>>>>>> Stashed changes:consumer.c
 }
