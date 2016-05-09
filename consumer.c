@@ -39,7 +39,7 @@ void *consumer(void *param)
       if (delete_item(&item) < 0);
       else
       {
-        print_buffer;
+        printOutBuffer();
       }
       pthread_mutex_unlock(&mutex);
       sem_post(&empty);
