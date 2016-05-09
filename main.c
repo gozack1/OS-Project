@@ -16,7 +16,7 @@ main.c
 #include "buffer.h"
 
 #define BUFFER_SIZE
-int count, delete = 0, begin, end;
+
 int main ()
 {
 
