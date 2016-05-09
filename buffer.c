@@ -12,6 +12,8 @@ Producer-Consumer Problem
 
 #include "buffer.h"
 
+int count, delete = 0, begin, end;
+
 <<<<<<< Updated upstream:OS Project/buffer.c
 buffer_item buffer[BUFFER_SIZE];
 =======
@@ -35,6 +37,8 @@ int insert(buffer_item item){
 	return -1; // return 1 if failure
 	}
 }
+
+
 int delete_item()
 {
   buffer_item item;
