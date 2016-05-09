@@ -16,7 +16,6 @@ main.c
 #include "buffer.h"
 
 #define BUFFER_SIZE
-<<<<<<< Updated upstream
 
 int main ()
 =======
@@ -32,7 +31,6 @@ int count, delete = 0, begin, end;
  * 6. Exit
  */
 int main (int arc, char *argv[])
->>>>>>> Stashed changes
 {
 
 // 1.
@@ -67,9 +65,6 @@ int main (int arc, char *argv[])
 
 }
 
-<<<<<<< Updated upstream
-
-=======
 	// 2.
 	sem_init(&full, 0, 0); // full semaphore no space available
 	sem_init(&empty, 0, BUFFER_SIZE); // empty semaphore full vacancy
@@ -128,4 +123,3 @@ int delete_item()
   count --;
   return 0;
 }
->>>>>>> Stashed changes
