@@ -12,14 +12,13 @@ Producer-Consumer Problem
 
 #include "buffer.h"
 
-int count, delete = 0, begin, end;
+int count, delete, begin, end;
 
 <<<<<<< Updated upstream:OS Project/buffer.c
 buffer_item buffer[BUFFER_SIZE];
 =======
 BUFFER_item buffer[BUFFER_SIZE]; // define buffer size
 >>>>>>> Stashed changes:buffer.c
-
 
 /*
  *  insert function takes in buffer_item item and attempts to insert it into the buffer
@@ -39,7 +38,7 @@ int insert(buffer_item item){
 }
 
 
-int delete_item()
+int delete_item(buffer_item *item)
 {
   buffer_item item;
 
@@ -53,4 +52,39 @@ int delete_item()
 
   count --;
   return 0;
+}
+
+void printOutBuffer()
+{
+	int x;
+	printf("Buffer: [");
+	if (count  == 0)
+	{
+		printf("Buffer Empty!");
+	}
+	else
+	{
+	if (end > delete)
+		{
+			x = delete;
+			for(x = delete; x < endl x++)
+			{
+				printf(" %x ", buffer[x]);
+			}
+		}
+	if (end <= delete)
+	{
+		for(x = delete; x < BUFFER_SIZE; x++)
+		{
+			prinf(" %x ", buffer[x]);
+		}
+		for (x = 0; x < end; x++)
+		{
+			printf(" %x ", buffer[x]);
+		}
+	}
+	
+	}
+	
+	printf("]\n");
 }
