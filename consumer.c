@@ -36,8 +36,11 @@ void *consumer(void *param)
       sem_wait(&full);
       pthread_mutex_lock(&mutex);
 
-      (delete_item(&item) < 0);
-
+      if (delete_item(&item) < 0);
+      else
+      {
+        print_buffer;
+      }
       pthread_mutex_unlock(&mutex);
       sem_post(&empty);
 
