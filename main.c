@@ -15,6 +15,7 @@ main.c
 
 #include "buffer.h"
 
+
 void *producer(void *param);
 void *consumer(void *param);
 
@@ -26,7 +27,7 @@ Main for producer consumer
  4. Create consumer thread(s)
  5. Sleep
  6. Exit
- 
+
 */
 
 int main (int argc, char* argv[]){
@@ -61,25 +62,27 @@ int main (int argc, char* argv[]){
 		return 0; // end
 	}
 
+	  srand(time(NULL)); // null
+
 	// 2.
 	sem_init(&full, 0, 0); // full semaphore no space available
 	sem_init(&empty, 0, BUFFER_SIZE); // empty semaphore full vacancy
 	pthread_mutex_init(&mutex, NULL); // mutex lock initialize
 
 	// 3.
-	 pthread_t producer[prodThreadNum]; // create pthread array producer for producer
+	 pthread_t produce[prodThreadNum]; // create pthread array producer for producer
 	 char *prod = "Producer"; //
-	 int i = 0;
-	 for(i; i < prodThreadNum; i++){ // for i < number of producer threads
-		 pthread_create(*producer[i], NULL, producer, prod); 
+	 int i;
+	 for(i=0; i < prodThreadNum; i++){ // for i < number of producer threads
+		 pthread_create(&produce[i], NULL, producer, prod);
 	 }
 
 
 	 // 4.
-	  pthread_t consumer[conThreadNum]; // create pthread arrar consumer for consumer
+	  pthread_t consume[conThreadNum]; // create pthread arrar consumer for consumer
 	 char *con = "Consumer";
 	 for(i=0; i < conThreadNum; i++){ // for i < number of consumer threads
-		 pthread_create(*consumer[i], NULL, consumer, con); // create a consumer thread
+		 pthread_create(&consume[i], NULL, consumer, con); // create a consumer thread
 	 }
 
 	 // 5.
