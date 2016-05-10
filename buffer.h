@@ -4,6 +4,12 @@ Mikal Callahan and Zachary Go
 Producer-Consumer Problem
 
 */
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <semaphore.h>
+#include <pthread.h>
+
 sem_t full, empty; 
 pthread_mutex_t mutex;
 
