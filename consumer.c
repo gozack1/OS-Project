@@ -10,29 +10,28 @@ consumer.c
 #include <pthread.h>
 #include <semaphore.h>
 #include <unistd.h>
-#include <sys/types.h>
 
 #include "buffer.h"
 
-sem_t full, empty;
-
-pthread_mutex_t mutex;
 
 int delete_item(buffer_item *item);
+void printOutBuffer();
 
-void *consumer(void *param)
+void *consumer(void *p)
 {
 
   buffer_item item;
 
   while (1)
   {
-      sleep (rand () %10 + 1);
+      sleep (rand () % 7 + 1);
 
       sem_wait(&full);
       pthread_mutex_lock(&mutex);
 
-      if (delete_item(&item) < 0);
+      if (delete_item(&item)){
+
+		}
       else
       {
         printOutBuffer();
@@ -41,6 +40,5 @@ void *consumer(void *param)
       sem_post(&empty);
 
   }
-return 0;
 
 }
