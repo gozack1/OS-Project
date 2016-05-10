@@ -15,23 +15,21 @@ main.c
 
 #include "buffer.h"
 
-#define BUFFER_SIZE
-
-int main ()
-=======
-int count, delete = 0, begin, end;
+void *producer(void *param);
+void *consumer(void *param);
 
 /*
- * Main for producer consumer
- * 1. Get command line arguments
- * 2. Initialize buffer
- * 3. Create producer thread(s)
- * 4. Create consumer thread(s)
- * 5. Sleep
- * 6. Exit
- */
-int main (int arc, char *argv[])
-{
+Main for producer consumer
+ 1. Get command line arguments
+ 2. Initialize buffer
+ 3. Create producer thread(s)
+ 4. Create consumer thread(s)
+ 5. Sleep
+ 6. Exit
+ 
+*/
+
+int main (int argc, char* argv[]){
 
 // 1.
  int sleepTime, prodThreadNum, conThreadNum;
@@ -57,13 +55,11 @@ int main (int arc, char *argv[])
 		return 0; // end
 	}
 
-	conThreadNum = atoi(arv[3]); // Get number of consumer threads
+	conThreadNum = atoi(argv[3]); // Get number of consumer threads
 	if(conThreadNum < 1){
 		printf("err5: invalid number of consumer threads. See user manual for run instructions."); // print out error
 		return 0; // end
 	}
-
-}
 
 	// 2.
 	sem_init(&full, 0, 0); // full semaphore no space available
@@ -72,17 +68,17 @@ int main (int arc, char *argv[])
 
 	// 3.
 	 pthread_t producer[prodThreadNum]; // create pthread array producer for producer
-	 char *prod = "Producer" //
+	 char *prod = "Producer"; //
 	 int i = 0;
-	 for(i, i < prodThreadNum, i++){ // for i < number of producer threads
-		 pthread_create(*producer[i], NULL, producer, prod); // create a producer thread
+	 for(i; i < prodThreadNum; i++){ // for i < number of producer threads
+		 pthread_create(*producer[i], NULL, producer, prod); 
 	 }
 
 
 	 // 4.
 	  pthread_t consumer[conThreadNum]; // create pthread arrar consumer for consumer
 	 char *con = "Consumer";
-	 for(i=0; i < conThreadNum, i++){ // for i < number of consumer threads
+	 for(i=0; i < conThreadNum; i++){ // for i < number of consumer threads
 		 pthread_create(*consumer[i], NULL, consumer, con); // create a consumer thread
 	 }
 
