@@ -12,7 +12,7 @@ Producer-Consumer Problem
 
 #include "buffer.h"
 
-int count, del, begin, end;
+int count, start, end;
 
 buffer_item buffer[BUFFER_SIZE]; // define buffer size
 
@@ -25,7 +25,7 @@ int insert(buffer_item item)
 {
 	if(count != BUFFER_SIZE){ // if buffer is not at capacity
 		buffer[end] = item; // item goes to the end of the buffer
-		printf("Produced: %d", item); // print produced item
+		printf("Produced: %d ", item); // print produced item
 		end = (end + 1) % BUFFER_SIZE; // new end we use modulus because the buffer is circular
 		count++; // increase counter
 		return 0; // return 0 if successful
@@ -35,16 +35,15 @@ int insert(buffer_item item)
 
 int delete_item(buffer_item *item)
 {
-  while (count == 0)
+  if (count > 0)
   {
-    //do nothing
-  }
-  item = &buffer[del];
-  printf("Consumed:  %d ", buffer[del]);
-  del = (del+ 1) % BUFFER_SIZE;
-
+  item = &buffer[start];
+  printf("Consumed:  %d ", buffer[start]);
+  start = (start+ 1) % BUFFER_SIZE;
   count --;
   return 0;
+  }
+  return -1;
 }
 
 void printOutBuffer()
@@ -57,18 +56,19 @@ void printOutBuffer()
 	}
 	else
 	{
-	if (end > del)
+	if (end > start)
 		{
-			for(x = del; x < end; x++)
+			x = start;
+			for(x = start; x < end; x++)
 			{
 				printf(" %x ", buffer[x]);
 			}
 		}
-	if (end <= del)
+	if (end <= start)
 	{
-		for(x = del; x < BUFFER_SIZE; x++)
+		for(x = start; x < BUFFER_SIZE; x++)
 		{
-			prinf(" %x ", buffer[x]);
+			printf(" %x ", buffer[x]);
 		}
 		for (x = 0; x < end; x++)
 		{
