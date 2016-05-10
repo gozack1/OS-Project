@@ -16,8 +16,13 @@ main.c
 #include "buffer.h"
 
 
+<<<<<<< Updated upstream
 void *producer(void *param);
 void *consumer(void *param);
+=======
+void *producer(void *param); // predefine producer
+void *consumer(void *param); // predefine consumer
+>>>>>>> Stashed changes
 
 /*
 Main for producer consumer
@@ -27,7 +32,10 @@ Main for producer consumer
  4. Create consumer thread(s)
  5. Sleep
  6. Exit
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 */
 
 int main (int argc, char* argv[]){
@@ -62,7 +70,11 @@ int main (int argc, char* argv[]){
 		return 0; // end
 	}
 
+<<<<<<< Updated upstream
 	  srand(time(NULL)); // null
+=======
+	srand(time(NULL)); // set null seed value
+>>>>>>> Stashed changes
 
 	// 2.
 	sem_init(&full, 0, 0); // full semaphore no space available
@@ -71,7 +83,11 @@ int main (int argc, char* argv[]){
 
 	// 3.
 	 pthread_t produce[prodThreadNum]; // create pthread array producer for producer
+<<<<<<< Updated upstream
 	 char *prod = "Producer"; //
+=======
+	 char *prod = "Producer"; // producer arg
+>>>>>>> Stashed changes
 	 int i;
 	 for(i=0; i < prodThreadNum; i++){ // for i < number of producer threads
 		 pthread_create(&produce[i], NULL, producer, prod);
@@ -80,7 +96,11 @@ int main (int argc, char* argv[]){
 
 	 // 4.
 	  pthread_t consume[conThreadNum]; // create pthread arrar consumer for consumer
+<<<<<<< Updated upstream
 	 char *con = "Consumer";
+=======
+	 char *con = "Consumer"; // consumer arg
+>>>>>>> Stashed changes
 	 for(i=0; i < conThreadNum; i++){ // for i < number of consumer threads
 		 pthread_create(&consume[i], NULL, consumer, con); // create a consumer thread
 	 }

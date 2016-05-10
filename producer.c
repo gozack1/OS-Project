@@ -13,7 +13,11 @@ Producer.c
 #include "buffer.h"
 
 int insert(buffer_item item); // predefine insert function
+<<<<<<< Updated upstream
 int delete_item(buffer_item *item);
+=======
+int delete_item(buffer_item *item); // predefine delete function
+>>>>>>> Stashed changes
 int printOutBuffer(); // predefine printOutBuffer function
 
 sem_t full, empty; // initialize semaphore full and empty
