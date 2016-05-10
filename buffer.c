@@ -12,20 +12,17 @@ Producer-Consumer Problem
 
 #include "buffer.h"
 
-int count, delete, begin, end;
+int count, del, begin, end;
 
-<<<<<<< Updated upstream:OS Project/buffer.c
-buffer_item buffer[BUFFER_SIZE];
-=======
-BUFFER_item buffer[BUFFER_SIZE]; // define buffer size
->>>>>>> Stashed changes:buffer.c
+buffer_item buffer[BUFFER_SIZE]; // define buffer size
 
 /*
  *  insert function takes in buffer_item item and attempts to insert it into the buffer
  * returns 0 if successful
  * returns -1 if failure
  */
-int insert(buffer_item item){
+int insert(buffer_item item)
+{
 	if(count != BUFFER_SIZE){ // if buffer is not at capacity
 		buffer[end] = item; // item goes to the end of the buffer
 		printf("Produced: %d", item); // print produced item
@@ -35,20 +32,16 @@ int insert(buffer_item item){
 	}
 	return -1; // return 1 if failure
 	}
-}
-
 
 int delete_item(buffer_item *item)
 {
-  buffer_item item;
-
   while (count == 0)
   {
     //do nothing
   }
-  item = buffer [delete];
-  printf("Consumed:  %d ", buffer[delete])
-  delete = (delete + 1 ) % BUFFER_SIZE;
+  item = &buffer[del];
+  printf("Consumed:  %d ", buffer[del]);
+  del = (del+ 1) % BUFFER_SIZE;
 
   count --;
   return 0;
@@ -64,17 +57,16 @@ void printOutBuffer()
 	}
 	else
 	{
-	if (end > delete)
+	if (end > del)
 		{
-			x = delete;
-			for(x = delete; x < endl x++)
+			for(x = del; x < end; x++)
 			{
 				printf(" %x ", buffer[x]);
 			}
 		}
-	if (end <= delete)
+	if (end <= del)
 	{
-		for(x = delete; x < BUFFER_SIZE; x++)
+		for(x = del; x < BUFFER_SIZE; x++)
 		{
 			prinf(" %x ", buffer[x]);
 		}
@@ -83,8 +75,8 @@ void printOutBuffer()
 			printf(" %x ", buffer[x]);
 		}
 	}
-	
+
 	}
-	
+
 	printf("]\n");
 }
