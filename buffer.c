@@ -33,11 +33,11 @@ int insert(buffer_item item)
 	return -1; // return 1 if failure
 	}
 
-	/*
-	 *  delete function takes in buffer_item item and attempts to delete it from the buffer
-	 * returns 0 if successful
-	 * returns -1 if failure
-	 */
+/*
+ *  delete function takes in buffer_item item and attempts to delete it from the buffer
+ * returns 0 if successful
+ * returns -1 if failure
+*/
 int delete_item(buffer_item *item)
 {
   if (count > 0)
