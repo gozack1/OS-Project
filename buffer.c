@@ -12,11 +12,7 @@ Producer-Consumer Problem
 
 #include "buffer.h"
 
-<<<<<<< Updated upstream
-int count, start, end;
-=======
 int count, start, end; // initialize count, start, and end
->>>>>>> Stashed changes
 
 buffer_item buffer[BUFFER_SIZE]; // define buffer size
 
@@ -44,7 +40,6 @@ int insert(buffer_item item)
 	 */
 int delete_item(buffer_item *item)
 {
-<<<<<<< Updated upstream
   if (count > 0)
   {
   item = &buffer[start];
@@ -54,7 +49,6 @@ int delete_item(buffer_item *item)
   return 0;
   }
   return -1;
-=======
   if (count > 0) // if count > 0
   {
   item = &buffer[start]; // item gets buffer start
@@ -64,7 +58,6 @@ int delete_item(buffer_item *item)
   return 0; // return 0
   }
   return -1; // return -1 if failure
->>>>>>> Stashed changes
 }
 
 /*
@@ -80,47 +73,37 @@ void printOutBuffer()
 	}
 	else
 	{
-<<<<<<< Updated upstream
 	if (end > start)
 		{
 			x = start;
 			for(x = start; x < end; x++)
-=======
 	if (end > start) // if end > start
 		{
 			x = start; // x = start
 			for(x = start; x < end; x++) // for x < end
->>>>>>> Stashed changes
 			{
 				printf(" %x ", buffer[x]); // print out buffer
 			}
 		}
-<<<<<<< Updated upstream
 	if (end <= start)
 	{
 		for(x = start; x < BUFFER_SIZE; x++)
 		{
 			printf(" %x ", buffer[x]);
-=======
 	if (end <= start) // if end <= start
 	{
 		for(x = start; x < BUFFER_SIZE; x++) // for x < BUFFER_SIZE
 		{
 			printf(" %x ", buffer[x]); // print buffer
->>>>>>> Stashed changes
 		}
 		for (x = 0; x < end; x++) // for x < end
 		{
 			printf(" %x ", buffer[x]); // print buffer
 		}
 	}
-<<<<<<< Updated upstream
-
 	}
 
 	printf("]\n");
-=======
 	}
 	printf("]\n"); // print end buffer bracket
->>>>>>> Stashed changes
 }
