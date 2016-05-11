@@ -72,7 +72,6 @@ int main (int argc, char* argv[]){
 
 	// 3.
 	 pthread_t produce[prodThreadNum]; // create pthread array producer for producer
-	 char *prod = "Producer"; //
 	 char *prod = "Producer"; // producer arg
 
 	 int i;
@@ -83,8 +82,6 @@ int main (int argc, char* argv[]){
 
 	 // 4.
 	  pthread_t consume[conThreadNum]; // create pthread arrar consumer for consumer
-	 char *con = "Consumer";
-
 	 char *con = "Consumer"; // consumer arg
 	 for(i=0; i < conThreadNum; i++){ // for i < number of consumer threads
 		 pthread_create(&consume[i], NULL, consumer, con); // create a consumer thread
