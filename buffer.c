@@ -103,7 +103,5 @@ void printOutBuffer()
 	}
 	}
 
-	printf("]\n");
-	}
 	printf("]\n"); // print end buffer bracket
 }
