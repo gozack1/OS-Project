@@ -105,6 +105,5 @@ void printOutBuffer()
 		}
 	}
 	}
-
 	printf("]\n"); // print end buffer bracket
 }
