@@ -37,7 +37,4 @@ void *consumer(void *p)
       pthread_mutex_unlock(&mutex); // release critical section
       sem_post(&empty); // another slot is now free
   }
-
-
-
 }
