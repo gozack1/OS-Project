@@ -77,6 +77,7 @@ void printOutBuffer()
 		{
 			x = start;
 			for(x = start; x < end; x++)
+		}
 	if (end > start) // if end > start
 		{
 			x = start; // x = start
@@ -90,6 +91,8 @@ void printOutBuffer()
 		for(x = start; x < BUFFER_SIZE; x++)
 		{
 			printf(" %x ", buffer[x]);
+		}
+	}
 	if (end <= start) // if end <= start
 	{
 		for(x = start; x < BUFFER_SIZE; x++) // for x < BUFFER_SIZE
