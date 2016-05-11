@@ -76,7 +76,7 @@ void printOutBuffer()
 	if (end > start)
 		{
 			x = start;
-			for(x = start; x < end; x++)
+			for(x = start; x < end; x++);
 		}
 	if (end > start) // if end > start
 		{
